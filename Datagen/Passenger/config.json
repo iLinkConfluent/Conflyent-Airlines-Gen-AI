@@ -1,0 +1,21 @@
+{
+  "customers": [
+    {
+      "first_name": "Jacky",
+      "last_name": "Sharaf",
+      "mobile_number": "+91 8789904324",
+      "email": "anshu.sharaf@ilink-systems.com",
+      "Gender": "Male"
+      
+    },
+    {
+      "first_name": "Surya",
+      "last_name": "Lanjewar",
+      "mobile_number": "52-3314524638",
+      "email":"tushar.lanjewar@ilink-systems.com",
+      "Gender": "Male"
+    }
+  ]
+}
+
+  

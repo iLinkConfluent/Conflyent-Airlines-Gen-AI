@@ -1,0 +1,7 @@
+{
+	"bootstrap.servers": "pkc-l7pr2.ap-south-1.aws.confluent.cloud:9092",
+	"security.protocol": "SASL_SSL",
+	"sasl.mechanisms": "PLAIN",
+	"sasl.username": "4QP4Z7XBTCT44WUI",
+	"sasl.password": "x4iaFRNaVrSbecLbGsSTKvZu2ujgHsrGFE+E60kqdkn+3Rcc5vfOaV86XqQxXUP1"
+}

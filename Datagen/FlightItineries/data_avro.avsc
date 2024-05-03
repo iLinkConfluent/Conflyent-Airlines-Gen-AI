@@ -1,0 +1,20 @@
+{
+  "type": "record",
+  "name": "TransactionRecord",
+  "fields": [
+    {"name": "TRANSACTIONID", "type": "int"},
+    {"name": "CUSTOMERID", "type": "int"},
+    {"name": "FLIGHTNUMBER", "type": "string"},
+    {"name": "CONFIRMATIONNUMBER", "type": "string"},
+    {"name": "FROMAIRPORT", "type": "string"},
+    {"name": "TOAIRPORT", "type": "string"},
+    {"name": "DEPARTURETIME", "type": "string"},
+    {"name": "ARRIVALTIME", "type": "string"},
+    {"name": "FlightStatus", "type": "string"},
+    {"name": "BookingDate", "type": "string"},
+    {"name": "SeatNo", "type": "string"},
+    {"name": "BookingStatus", "type": "string"},
+    {"name": "BookingAmount", "type": "int"},
+    {"name": "PaymentStatus", "type": "string"}
+  ]
+}

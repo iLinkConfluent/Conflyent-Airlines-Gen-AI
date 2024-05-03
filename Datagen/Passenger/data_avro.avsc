@@ -1,0 +1,14 @@
+{
+  "type": "record",
+  "name": "Customer",
+  "fields": [
+    {"name": "CUSTOMERID", "type": "int"},
+    {"name": "FIRSTNAME", "type": "string"},
+    {"name": "LASTNAME", "type": "string"},
+    {"name": "EMAIL", "type": "string"},
+    {"name": "PHONE", "type": "string"},
+    {"name": "GENDER", "type": "string"},
+    {"name": "ADDRESS", "type": "string"},
+    {"name": "MemberShipType", "type": "string"}
+  ]
+}
