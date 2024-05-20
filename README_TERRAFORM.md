@@ -10,10 +10,10 @@ By using terraform we are going to perform the following:
 
 ## Prerequisites
 
-1. Azure Subscription
+1. Azure Subscription 
 2. Confluent Cloud Account
 3. Rockset Account
-4. Aure Open AI
+4. Aure Open AI - Refere [Azure_OpenAI](Azure_OpenAI.md)
 5. Terraform - [Download here](https://developer.hashicorp.com/terraform/install)
 6. Azure CLI - [Download here](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
 7. Docker    - [Download here](https://www.docker.com/products/docker-desktop/)
