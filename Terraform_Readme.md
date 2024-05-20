@@ -63,7 +63,7 @@ Az login
 
 **Step5:** Run `Create_Components.sh` – to create the azure and confluent components.
 
-**Step6:** Ones `Create_Components.sh` completed. We need Place the `flight_policy_data.pdf` in the raw folder of the newly created blob container. Refere the `Datagen -> Readme_DataGen.md` for how to place the pdf.
+**Step6:** Ones `Create_Components.sh` completed. We need Place the `flight_policy_data.pdf` in the raw folder of the newly created blob container. Refere the `Datagen -> Readme_DataGen.md` for how to place the pdf.  [Relative document](./Datagen/Readme_DataGen.md).
 
 **Step7:** Open `properties.txt` which will be created after running `Create_Components.sh`
 
