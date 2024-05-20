@@ -2,10 +2,10 @@
 
 By using terraform we are going to perform the following:
 
-* Creation of Azure resources - Resource Group, ADLS blob, Function App, Container Registry, Container App, Azure OpenAI and Web App.
+* Creation of Azure resources - Resource Group, ADLS blob, Function Apps, Container Registry, Container App and Web App.
 * Creation of Confluent components - Enviroment, Cluster, Topics, Flink and Sink connector.
-* Creation of DataGen
-* Building Docker images - Frontend and Backend.
+* Creation of DataGenration.
+* Building Docker images for Frontend and Backend.
 * Deploying Docker images to Container App(backend) and Web App(frontend).
 
 ## Prerequisites
@@ -13,91 +13,110 @@ By using terraform we are going to perform the following:
 1. Azure Subscription
 2. Confluent Cloud Account
 3. Rockset Account
-4. Terraform - [Download here](https://developer.hashicorp.com/terraform/install)
-5. Azure CLI - [Download here](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
-6. Docker    - [Download here](https://www.docker.com/products/docker-desktop/)
-7. Azure Function CLI - [Download here](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-csharp)
-8. Python - Make sure you have the latest version of Python installed. If not, [download here](https://www.python.org/downloads/release/python-390/)
-9. Git Bash - If not installed, [download here](https://git-scm.com/downloads)
-10. Aure Open AI
+4. Aure Open AI
+5. Terraform - [Download here](https://developer.hashicorp.com/terraform/install)
+6. Azure CLI - [Download here](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli)
+7. Docker    - [Download here](https://www.docker.com/products/docker-desktop/)
+8. Azure Function CLI - [Download here](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=windows%2Cisolated-process%2Cnode-v4%2Cpython-v2%2Chttp-trigger%2Ccontainer-apps&pivots=programming-language-csharp)
+9. Python - Make sure you have the latest version of Python installed. If not, [download here](https://www.python.org/downloads/release/python-390/)
+10. Git Bash - If not installed, [download here](https://git-scm.com/downloads)
 11. Any code editor
 
-Step1: Clone/Download the source code. Now you will be able to see Three Blocks.
+**Note:** Kindly make sure all the prerequisites are Created/Installed.
+
+### Source Code
+
+**Step1:** To Clone/Download the source code from the Git repository, click on `code` icon
+
+![a](image/Picture1.png)
+
+**Step2:** In dropdown you can see options to download the code as zip or clone the repositroy.
+
+**Step3:** Navigate to the path where the code is downloaded/cloned.
+
+![a](image/Picture2.png)
+
+**Step4:** We are going to deploy each blocks in the below order
 
 1. DataGen
 2. FrontEnd
 3. BackEnd
 
-We are going to deploy each blocks in the above order
+### DataGen
 
-Step2: Open terminal
+**Step1:** Open new terminal using VScode or GitBash
 
-Step3: To authenticate with Azure run the below command.
+**Step2:** To authenticate with Azure run the below command.
 
 ````bash
 Az login
 ````
+![a](image/Picture3.png)
 
 **Note**: New window will open, kindly enter valid azure login credentials to authenticate
 
-### DataGen
+**Step3:** Navigate to the `DataGen -> terrform -> variable.tf`.
 
-Step1: Navigate to the DataGen folder and open terrform present inside.
+![a](image/Picture4.png)
 
-Step2: Open `Variable.tf` file and enter the required values.
+**Step4:** Open `Variable.tf` file and enter the required values.
 
-Step3: Open `Readme_DataGen.md` make sure all the Prerequisites are installed, ifnot install the Prerequisites.
+**Step5:** Run `Create_Components.sh` – to create the azure and confluent components.
 
-Step4: Run `Create_Components.sh` – to create the azure and confluent components.
+**Step6:** Ones `Create_Components.sh` completed. We need Place the `flight_policy_data.pdf` in the raw folder of the newly created blob container. Refere the `Datagen -> Readme_DataGen.md` for how to place the pdf.
 
-Step5: Place the `flight_policy_data.pdf` in the raw folder of the blob container. Refere the Readme Datagen, how to place the pdf.
+**Step7:** Open `properties.txt` which will be created after running `Create_Components.sh`
 
-Step6: Open `properties.txt` which will be created after running `Create_Components.sh`
+**Step8:** Update the `CONFLUENT_SCHEMA_REGISTRYURL` and `CONFLUENT_SCHEMA_REGISTRY_AUTH_USER` vaules. Refer `Datagen -> Readme_DataGen.md` how to create the Schema registry.
 
-Step7: Update the `CONFLUENT_SCHEMA_REGISTRYURL` and `CONFLUENT_SCHEMA_REGISTRY_AUTH_USER` vaules. Refer `Readme_DataGen.md` how to create the Schema registry.
+**Step9:** Run `DataGen_Trigger.sh` – to push Data into confluent topics.
 
-Step6: Run `DataGen_Trigger.sh` – to push Data into confluent topics.
+**Step10:** To create flink API key and secret, Refere `Datagen -> Readme_DataGen.md`.
 
-Step7: Navigate to the Flink folder present inside the terraform.
+**Step11:** Open `Kafka.py` and enter the OpenAI details.
 
-Step8: Refere `Readme_DataGen.md` to create flink API key and secret
+![a](image/Picture5.png)
 
-Step9: Open `Kafka.py` and enter the open ai details.
+**Step12:** Navigate to the `DataGen -> terrform -> Flink` folder.
 
-Step8: open `variabel.tf` file and enter the requried values.
+**Step13:** open `variabel.tf` file and enter the requried values.
 
-Step9: Run `flink.sh` to execute the flink statements and push data into embeddings topic.
+**Step14:** Run `flink.sh` to execute the flink statements and push data into embeddings topic.
 
 ### Rockset
 
-Note: Refere `Readme_DataGen.md`  to create the Rockset intergration for confluent cluster and collection using cofluent topics
+**Note:** Refere `Datagen -> Readme_DataGen.md` to create the Rockset intergration for confluent cluster and collection using cofluent topics.
 
 ### FrontEnd
 
-Step6: Navigate to the FrontEnd folder and open terrform present inside.
+**Step1:** Navigate to `FrontEnd -> terrform -> variable.tf`
 
-Step7: Open `Variable.tf` file and enter the required values. Use the same resource group name used for DataGen.
+**Step2:** Open `Variable.tf` file and enter the required values. Use the same resource group name used for DataGen.
 
-Step8: Run `Frontend_deploy.sh` – To create azure components and deploy frontend.
+**Step3:** Run `Frontend_deploy.sh` – To create azure components and deploy frontend.
 
 ### BackEnd
 
-Step9: Navigate to the BackendEnd folder and chat_app present inside.
+**Step1:** Navigate to `BackEnd -> chat_app -> client.properties`
 
-Step10: Navigate to `client.properties` and update the confluent cluster details.
+**Step2:** Open `client.properties` and update the confluent cluster details.
 
-Step11: Navigate to `config.py` and update the Rockset and OpenAI details.
+**Step3:** Navigate to `config.py` and update the Rockset and OpenAI details.
 
-Step11: Navigate back to the BackEnd folder and open terraform.
+**Step4:** Navigate to `BackEnd -> terrform -> variable.tf`
 
-Step12: Open `Variable.tf` file and enter the required values. Use the same resource group name used in DataGen.
+**Step5:** Open `Variable.tf` file and enter the required values. Use the same resource group name and Azure container registry name used in FrontEnd.
 
-Step18: Run `Backend_deploy.sh` –To create azure components and deploy Backend.
+**Step6:** Run `Backend_deploy.sh` –To create azure components and deploy Backend.
 
-To destroy the resources created using terraform Navigate to the terraform folder present inside the blocks and run the below command.
+### Clean-up
+
+**Approach 1:** Navigate to the resoruce group you created for this project and click on delete resource group to delete all the components.
+
+**Approach 2:** To destroy the resources created using terraform Navigate to the terraform folder present inside the blocks and run the below command.
 
 ````bash
 Terraform destroy 
 `````
 
-**Note**: terraform destroy will prompt for confirmation
+**Note:** terraform destroy will prompt for confirmation.
