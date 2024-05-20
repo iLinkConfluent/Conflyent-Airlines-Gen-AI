@@ -63,15 +63,15 @@ Az login
 
 **Step5:** Run `Create_Components.sh` – to create the azure and confluent components.
 
-**Step6:** Ones `Create_Components.sh` completed. We need Place the `flight_policy_data.pdf` in the raw folder of the newly created blob container. Refere the `Datagen -> Readme_DataGen.md` for how to place the pdf.  [Relative document](./Datagen/Readme_DataGen.md).
+**Step6:** Ones `Create_Components.sh` completed. We need Place the `flight_policy_data.pdf` in the raw folder of the newly created blob container. Refere the [DataGen-Readme](./Datagen/Readme_DataGen.md) for how to place the pdf.
 
 **Step7:** Open `properties.txt` which will be created after running `Create_Components.sh`
 
-**Step8:** Update the `CONFLUENT_SCHEMA_REGISTRYURL` and `CONFLUENT_SCHEMA_REGISTRY_AUTH_USER` vaules. Refer `Datagen -> Readme_DataGen.md` how to create the Schema registry.
+**Step8:** Update the `CONFLUENT_SCHEMA_REGISTRYURL` and `CONFLUENT_SCHEMA_REGISTRY_AUTH_USER` vaules. Refer [DataGen-Readme](./Datagen/Readme_DataGen.md) how to create the Schema registry.
 
 **Step9:** Run `DataGen_Trigger.sh` – to push Data into confluent topics.
 
-**Step10:** To create flink API key and secret, Refere `Datagen -> Readme_DataGen.md`.
+**Step10:** To create flink API key and secret, Refere [DataGen-Readme](./Datagen/Readme_DataGen.md).
 
 **Step11:** Open `Kafka.py` and enter the OpenAI details.
 
@@ -85,7 +85,7 @@ Az login
 
 ### Rockset
 
-**Note:** Refere `Datagen -> Readme_DataGen.md` to create the Rockset intergration for confluent cluster and collection using cofluent topics.
+**Note:** Refere [DataGen-Readme](./Datagen/Readme_DataGen.md) to create the Rockset intergration for confluent cluster and collection using cofluent topics.
 
 ### FrontEnd
 
