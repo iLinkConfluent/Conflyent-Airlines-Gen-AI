@@ -1,0 +1,104 @@
+{
+  "customers":[
+  {
+    "CUSTOMERID": 100001,
+    "FIRSTNAME": "Tammie",
+    "LASTNAME": "Nielsen",
+    "EMAIL": "shepherdscott@example.com",
+    "PHONE": "001-401-182-5321x197",
+    "GENDER": "M",
+    "ADDRESS": "7387 William Spur Suite 511\\nLake Ronaldside, CT 83515",
+    "MemberShipType": "Silver"
+  },
+  {
+    "CUSTOMERID": 100002,
+    "FIRSTNAME": "Adrian",
+    "LASTNAME": "Barker",
+    "EMAIL": "elizabeth11@example.com",
+    "PHONE": "242-813-4916x6180",
+    "GENDER": "M",
+    "ADDRESS": "95056 Thomas Knolls Suite 132\\nJeffreyshire, WA 37592",
+    "MemberShipType": "Gold"
+  },
+  {
+    "CUSTOMERID": 100003,
+    "FIRSTNAME": "Wesley",
+    "LASTNAME": "Gonzales",
+    "EMAIL": "neil29@example.org",
+    "PHONE": "001-303-246-0711x74623",
+    "GENDER": "M",
+    "ADDRESS": "1928 Andrew Viaduct Apt. 650\\nGregoryland, AL 36653",
+    "MemberShipType": "Platinum"
+  },
+  {
+    "CUSTOMERID": 100004,
+    "FIRSTNAME": "Sullivan",
+    "LASTNAME": "Martin",
+    "EMAIL": "bsullivan@example.com",
+    "PHONE": "(323)623-0489",
+    "GENDER": "M",
+    "ADDRESS": "03955 Harris Ridges Suite 610\\nBakerport, WV 94850",
+    "MemberShipType": "Silver"
+  },
+  {
+    "CUSTOMERID": 100005,
+    "FIRSTNAME": "Joseph",
+    "LASTNAME": "Daniel",
+    "EMAIL": "sheilaperry@example.org",
+    "PHONE": "247.342.6914x76114",
+    "GENDER": "M",
+    "ADDRESS": "Unit 3680 Box 6969\\nDPO AE 52267",
+    "MemberShipType": "Gold"
+  },
+  {
+    "CUSTOMERID": 218617,
+    "FIRSTNAME": "John",
+    "LASTNAME": "Bailey",
+    "EMAIL": "timothy57@example.com",
+    "PHONE": "+1-494-523-8985",
+    "GENDER": "M",
+    "ADDRESS": "USNS Chavez\\nFPO AE 35511",
+    "MemberShipType": "Platinum"
+  },
+  {
+    "CUSTOMERID": 100007,
+    "FIRSTNAME": "Payne",
+    "LASTNAME": "Samuel",
+    "EMAIL": "hodgebrianna@example.com",
+    "PHONE": "720-657-0884x297",
+    "GENDER": "M",
+    "ADDRESS": "3906 Rowe Isle Suite 375\\nJohnsontown, NJ 05632",
+    "MemberShipType": "Silver"
+  },
+  {
+    "CUSTOMERID": 100008,
+    "FIRSTNAME": "Garrett",
+    "LASTNAME": "Bailey",
+    "EMAIL": "vanessa14@example.com",
+    "PHONE": "3559293060",
+    "GENDER": "M",
+    "ADDRESS": "943 West Common\\nPort Elizabethbury, MP 66789",
+    "MemberShipType": "Gold"
+  },
+  {
+    "CUSTOMERID": 100009,
+    "FIRSTNAME": "Eric",
+    "LASTNAME": "Samuel",
+    "EMAIL": "carol12@example.org",
+    "PHONE": "(111)359-1470",
+    "GENDER": "M",
+    "ADDRESS": "5566 Lori Falls Apt. 741\\nEast Cynthiastad, UT 52682",
+    "MemberShipType": "Platinum"
+  },
+  {
+    "CUSTOMERID": 100010,
+    "FIRSTNAME": "Stuart",
+    "LASTNAME": "Broad",
+    "EMAIL": "dhensley@example.net",
+    "PHONE": "+1-768-569-3398",
+    "GENDER": "M",
+    "ADDRESS": "USS Sutton\\nFPO AA 52468",
+    "MemberShipType": "Platinum"
+  }
+]
+}

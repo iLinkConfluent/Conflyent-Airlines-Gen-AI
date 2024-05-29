@@ -1,0 +1,80 @@
+.container-fluid {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.homeBgImg {
+    height: 60vh;
+    background-image: url('../Assets/Banner.png');
+    background-size: 100% 100%;
+    position: relative;
+}
+
+.banner-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    padding-left: 30px;
+    top: 36vh;
+    transform: translateY(-50%);
+}
+
+.floating-form-wrap {
+    position: absolute;
+    top: -3vw;
+    z-index: 1;
+    left: 8vw;
+    background-size: 100% 100%;
+}
+
+.floating-form-wrap .floating-form {
+    height: 20vw;
+    width: 25vw;
+    background-size: 100% 100%;
+}
+
+.mileageText-wrap {
+    width: 20vw;
+    height: 11vw;
+}
+
+.text {
+    color: rgba(122, 184, 223, 0.50);
+    font-family: 'Oleo Script', cursive;
+    font-size: 10.5vw;
+    -webkit-text-stroke: 0.4vmax white;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.homeFooter {
+    height: 40vh;
+    background: #C1E1F7;
+    position: relative;
+}
+
+.footerText {
+    margin-top: 7%;
+    text-align: center;
+}
+
+.chatWindow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Launcher {
+    float: right;
+    width: 5vw;
+    height: 6vw;
+    margin: 10vw -1.4vw 0;
+    filter: drop-shadow(0 4px 12px rgba(0 0 0 / 20%)) drop-shadow(0 2px 4px rgba(0 0 0 / 10%));
+}
+
+.Launcher:hover {
+    transform: scale(1.1);
+}

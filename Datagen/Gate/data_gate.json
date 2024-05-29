@@ -1,0 +1,154 @@
+{
+  "gate":[
+  {
+    "FLIGHTNUMBER": "A7866",
+    "TERMINAL": 3,
+    "GATE": 60
+  },
+  {
+    "FLIGHTNUMBER": "A8823",
+    "TERMINAL": 3,
+    "GATE": 59
+  },
+  {
+    "FLIGHTNUMBER": "A7061",
+    "TERMINAL": 1,
+    "GATE": 51
+  },
+  {
+    "FLIGHTNUMBER": "A7109",
+    "TERMINAL": 3,
+    "GATE": 57
+  },
+  {
+    "FLIGHTNUMBER": "A7636",
+    "TERMINAL": 3,
+    "GATE": 55
+  },
+  {
+    "FLIGHTNUMBER": "A8114",
+    "TERMINAL": 2,
+    "GATE": 53
+  },
+  {
+    "FLIGHTNUMBER": "A7040",
+    "TERMINAL": 2,
+    "GATE": 54
+  },
+  {
+    "FLIGHTNUMBER": "A7578",
+    "TERMINAL": 1,
+    "GATE": 57
+  },
+  {
+    "FLIGHTNUMBER": "A7546",
+    "TERMINAL": 3,
+    "GATE": 54
+  },
+  {
+    "FLIGHTNUMBER": "A8821",
+    "TERMINAL": 3,
+    "GATE": 53
+  },
+  {
+    "FLIGHTNUMBER": "A7542",
+    "TERMINAL": 2,
+    "GATE": 61
+  },
+  {
+    "FLIGHTNUMBER": "A7212",
+    "TERMINAL": 2,
+    "GATE": 61
+  },
+  {
+    "FLIGHTNUMBER": "A7202",
+    "TERMINAL": 3,
+    "GATE": 55
+  },
+  {
+    "FLIGHTNUMBER": "A7085",
+    "TERMINAL": 3,
+    "GATE": 51
+  },
+  {
+    "FLIGHTNUMBER": "A7954",
+    "TERMINAL": 3,
+    "GATE": 53
+  },
+  {
+    "FLIGHTNUMBER": "A8353",
+    "TERMINAL": 2,
+    "GATE": 58
+  },
+  {
+    "FLIGHTNUMBER": "A7801",
+    "TERMINAL": 1,
+    "GATE": 51
+  },
+  {
+    "FLIGHTNUMBER": "A8233",
+    "TERMINAL": 2,
+    "GATE": 57
+  },
+  {
+    "FLIGHTNUMBER": "A8816",
+    "TERMINAL": 3,
+    "GATE": 62
+  },
+  {
+    "FLIGHTNUMBER": "A7068",
+    "TERMINAL": 1,
+    "GATE": 61
+  },
+  {
+    "FLIGHTNUMBER": "A7492",
+    "TERMINAL": 3,
+    "GATE": 57
+  },
+  {
+    "FLIGHTNUMBER": "A7782",
+    "TERMINAL": 3,
+    "GATE": 60
+  },
+  {
+    "FLIGHTNUMBER": "A7067",
+    "TERMINAL": 2,
+    "GATE": 53
+  },
+  {
+    "FLIGHTNUMBER": "A8831",
+    "TERMINAL": 1,
+    "GATE": 61
+  },
+  {
+    "FLIGHTNUMBER": "A7928",
+    "TERMINAL": 3,
+    "GATE": 60
+  },
+  {
+    "FLIGHTNUMBER": "A8661",
+    "TERMINAL": 2,
+    "GATE": 53
+  },
+  {
+    "FLIGHTNUMBER": "A7571",
+    "TERMINAL": 1,
+    "GATE": 61
+  },
+  {
+    "FLIGHTNUMBER": "A8764",
+    "TERMINAL": 3,
+    "GATE": 51
+  },
+  {
+    "FLIGHTNUMBER": "A8432",
+    "TERMINAL": 1,
+    "GATE": 52
+  },
+  {
+    "FLIGHTNUMBER": "A8750",
+    "TERMINAL": 1,
+    "GATE": 54
+  }
+]
+}

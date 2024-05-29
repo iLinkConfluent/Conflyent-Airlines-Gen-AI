@@ -1,0 +1,18 @@
+{
+  "type": "record",
+  "name": "GateRecord",
+  "fields": [
+    {
+      "name": "FLIGHTNUMBER",
+      "type": "string"
+    },
+    {
+      "name": "TERMINAL",
+      "type": "int"
+    },
+    {
+      "name": "GATE",
+      "type": "int"
+    }
+  ]
+}
