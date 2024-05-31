@@ -119,7 +119,7 @@ az account set --subscription xxxxxxxxx
 
 **Step9:** Update the `CONFLUENT_SCHEMA_REGISTRYURL` and `CONFLUENT_SCHEMA_REGISTRY_AUTH_USER` vaules. `CONFLUENT_SCHEMA_REGISTRY_AUTH_USER` is converted as `basic.auth.user.info` in DataGen_Trigger.sh script.
 
-![a](image/prop.png)
+![a](image/Prop.png)
 
 1. Schema registry URL is present in the environment. Once environment
 is selected, in the right option pane schema registry can be URL
