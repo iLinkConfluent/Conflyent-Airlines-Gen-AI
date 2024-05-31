@@ -1,3 +1,26 @@
+# A real time Chat Application using Confluent.
+
+![a](image/arch.png)
+
+### Data Augmentation
+
+**Data Sourcing:**
+
+*	The architecture comprises two primary data sources – “Flight Itinerary System” and “Flight Policy System”. The Flight policy data is securely stored in Azure Blob Storage, ensuring a centralized and scalable repository for policy-related information.  
+*	The Flight Itinerary System contains Flight Customer data, Flight Itineraries data and Flight gate data covering details like flight numbers, departure/arrival times, and route information.
+*	The Flight Policy System holds data related to policies, regulatory compliance details, and safety protocols.
+*	The data from these data sources are streamed into Confluent topics, namely “Flight Itinerary” and “Flight Policy”, using Confluent connectors. This ensures continuous updates and availability of the most recent information.
+*	The “Flight Customer Data”, “Flight Itineraries Data” and Flight gate data” is enriched using Flink SQL within Confluent Cloud and creates an enriched topic named “Flight Data”
+
+**Consumer Group & LLM Integration:**
+
+*	The Azure App Service consumes data from Confluent topics (Flight Itinerary & Flight Policy) and collaborates with the Language Model (LLM) "Chat GPT" to enrich the data.
+*	The enriched data is then stored in the Confluent topic called "Flight Data Embeddings".
+*	The Confluent topic (Flight Data Embeddings) has native integration with Vector DB, for further analysis or storage of specific types of enriched data.
+Real-time Chat Application
+*	When a user asks a question to the chatbot, their queries are stored in the "Questions" topic. The Chat Application Backend Azure App Service analyzes these questions using Chat GPT, retrieves relevant answers from Vector DB, and stores these answers in the "Answers" topic within the Confluent environment. 
+*	The Real-time Chat Application Front End Integration provides a user-friendly interface for customers to engage with the chatbot seamlessly, ensuring that they receive accurate and timely responses to their inquiries.
+
 # Terraform Execution
 
 By using terraform we are going to perform the following:
