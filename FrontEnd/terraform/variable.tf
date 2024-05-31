@@ -1,10 +1,10 @@
 #AZURE
 variable "resource_group_name" {
-  default = "confluent-genai-azure"
+  default = "Use the same resource group name used in datagen"
 } 
 
 variable "acrname" {
-  default = "azuregenaiazurez"
+  default = "azure container registry name"
 } 
 
 variable "dockertag-frontend" {
@@ -12,9 +12,9 @@ variable "dockertag-frontend" {
 } 
 
 variable "webapp_name" {
-  default = "conflyentazure"
+  default = "provide a name to your webapp"
 }
 
 variable "service_principal" {
-  default = "azurewebappz"
+  default = "webapp service principal name"
 }

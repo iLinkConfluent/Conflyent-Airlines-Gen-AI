@@ -1,20 +1,20 @@
 #AZURE
 variable "resource_group_name" {
-  default = "confluent-genai-azure"
+  default = "Use the same resource group name used in datagen"
 } 
 
 variable "acrname" {
-  default = "azuregenaiazurez"
+  default = "Use the same acr name used in frontend"
 } 
 
 variable "dockertag-backend" {
-  default = "backendenv:latest"
+  default = "backend:latest"
 } 
 
 variable "service_principal" {
-  default = "containerappz"
+  default = "container app service principal name"
 }
 
 variable "containerapp_name" {
- default = "confluent-genai-azurez" 
+ default = "provide a name to your containerapp" 
 }

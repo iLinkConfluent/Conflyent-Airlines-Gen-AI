@@ -32,7 +32,7 @@ resource "azurerm_container_registry" "acr" {
 
 resource "null_resource" "acrlogin" {
   provisioner "local-exec" {
-    command = "az acr login -n ${var.acrname}"
+    command = "az acr login --name ${var.acrname}"
   }
   depends_on = [
    azurerm_container_registry.acr,

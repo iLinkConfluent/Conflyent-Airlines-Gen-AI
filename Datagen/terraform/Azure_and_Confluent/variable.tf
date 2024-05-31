@@ -1,11 +1,11 @@
 #CONFLUENT
 
 variable "confluent_cloud_api_key" {
-  default = "XXX"
+  default = "confluent cloud api key"
 }
 
 variable "confluent_cloud_api_secret" {
- default = "XXX"
+ default = "confluent cloud api secret"
 }
 
 variable "confluent_service_account" {
@@ -58,10 +58,12 @@ variable "azure_functionapp_Passenger"{
   default = "Azure functionapp1 name"
 }
 
-variable "azure_functionapp_FlightItineries"{
+variable "azure_functionapp_FlightItineraries"{
   default = "Azure functionapp2 name"
 }
 
 variable "azure_functionapp_Gate"{
   default = "Azure functionapp3 name"
 }
+
+

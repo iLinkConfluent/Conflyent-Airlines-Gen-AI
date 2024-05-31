@@ -2,13 +2,11 @@
 
 Follow below steps to create a resource and deploy a model:
 
-1. Create an Azure OpenAI resource
-
-2. Deploy a model
+* Create an Azure OpenAI resource and Deploy models refere Microsoft documentation -<https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal>
 
 ## Here are the requirements for Azure OpenAI models
 
-### For Embeddings
+### Embeddings model used for kafka.py
 
 - Model name: text-embedding-ada-002
 - Model version: 2
@@ -18,7 +16,7 @@ Follow below steps to create a resource and deploy a model:
 - Rate limit (Tokens per minute): 1000000
 - Rate limit (Requests per minute): 6000
 
-### For Chat
+### Chat model used for chat_app.py
 
 - Model name: gpt-35-turbo-16k
 - Model version: 0613

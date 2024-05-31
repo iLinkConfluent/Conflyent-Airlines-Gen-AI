@@ -10,13 +10,10 @@ resource "confluent_flink_statement" "statement1" {
   lifecycle {
     prevent_destroy = false
   }
-  depends_on = [
-    resource.confluent_flink_compute_pool.main,
-  ]
 }
 
 resource "confluent_flink_statement" "statement2" {
-  statement  = "insert into CustomerItinerary( TRANSACTIONID, CUSTOMERID, FLIGHTNUMBER, CONFIRMATIONNUMBER, FROMAIRPORT, TOAIRPORT, DEPARTURETIME, ARRIVALTIME, FlightStatus, BookingDate, SeatNo, BookingStatus, BookingAmount, PaymentStatus, FIRSTNAME, LASTNAME, EMAIL, PHONE, GENDER, ADDRESS, MemberShipType ) select TRANSACTIONID, FlightCustomerData.CUSTOMERID, FLIGHTNUMBER, CONFIRMATIONNUMBER, FROMAIRPORT, TOAIRPORT, DEPARTURETIME, ARRIVALTIME, FlightStatus, BookingDate, SeatNo, BookingStatus, BookingAmount, PaymentStatus, FIRSTNAME, LASTNAME, EMAIL, PHONE, GENDER, ADDRESS, MemberShipType from FlightCustomerData inner join FlightItineriesData on FlightCustomerData.CUSTOMERID = FlightItineriesData.CUSTOMERID;"
+  statement  = "insert into CustomerItinerary( TRANSACTIONID, CUSTOMERID, FLIGHTNUMBER, CONFIRMATIONNUMBER, FROMAIRPORT, TOAIRPORT, DEPARTURETIME, ARRIVALTIME, FlightStatus, BookingDate, SeatNo, BookingStatus, BookingAmount, PaymentStatus, FIRSTNAME, LASTNAME, EMAIL, PHONE, GENDER, ADDRESS, MemberShipType ) select TRANSACTIONID, FlightCustomerData.CUSTOMERID, FLIGHTNUMBER, CONFIRMATIONNUMBER, FROMAIRPORT, TOAIRPORT, DEPARTURETIME, ARRIVALTIME, FlightStatus, BookingDate, SeatNo, BookingStatus, BookingAmount, PaymentStatus, FIRSTNAME, LASTNAME, EMAIL, PHONE, GENDER, ADDRESS, MemberShipType from FlightCustomerData inner join FlightItinerariesData on FlightCustomerData.CUSTOMERID = FlightItinerariesData.CUSTOMERID;"
   properties = {
     "sql.current-catalog"  = var.confluent_environment_display_name
     "sql.current-database" = var.confluent_kafka_cluster_display_name
@@ -27,7 +24,6 @@ resource "confluent_flink_statement" "statement2" {
   }
   depends_on = [
     resource.confluent_flink_statement.statement1,
-    resource.confluent_flink_compute_pool.main,
   ]
 }
 
@@ -43,7 +39,6 @@ resource "confluent_flink_statement" "statement3" {
   }
    depends_on = [
     resource.confluent_flink_statement.statement2,
-    resource.confluent_flink_compute_pool.main,
   ]
 }
 
@@ -59,6 +54,5 @@ resource "confluent_flink_statement" "statement4" {
   }
    depends_on = [
     resource.confluent_flink_statement.statement3,
-    resource.confluent_flink_compute_pool.main,
   ]
 }

@@ -12,15 +12,16 @@ from langchain.embeddings import AzureOpenAIEmbeddings
 
 ########## ENTER THE OPENAI DETAILS BELOW #################
 embeddings = AzureOpenAIEmbeddings(
-    openai_api_version="2024-02-15-preview",
-    azure_endpoint="https://idocopenaigpt.openai.azure.com/",
-    azure_deployment="idocembedd"
+    openai_api_version="",
+    azure_endpoint="",
+    azure_deployment="",
+    api_key=""
 )
 ############################################################
 
 # parse confluent properties file
 
-with open('./terraform/properties.txt', 'r') as f:
+with open('../Azure_and_Confluent/properties.txt', 'r') as f:
     lines = f.readlines()
     for line in lines:
         if 'CONFLUENT_KAFKA_CLUSTER_URL' in line:
@@ -63,7 +64,7 @@ while running:
     print('[CONSUMER] Reading data from topics: ', messages.keys())
     msg = consumer.poll(1.0)
 
-    # if msg is None and (len(messages['FlightCustomerData']) > 0 or len(messages['FlightItineriesData']) > 0 or len(messages['FlightGateData']) > 0 or len(messages['FlightPolicyData']) > 0):
+    # if msg is None and (len(messages['FlightCustomerData']) > 0 or len(messages['FlightItinerariesData']) > 0 or len(messages['FlightGateData']) > 0 or len(messages['FlightPolicyData']) > 0):
     if msg is None and len(messages['FlightPolicyData']) > 0:
         running = False
         break
@@ -86,7 +87,7 @@ while running:
 
 # Write FlightPolicyData to pdf file
 bytes_pdf = base64.b64decode(messages['FlightPolicyData'][0])
-with open('./data/flight_policy_data.pdf', 'wb') as f:
+with open('../../flight_policy_data.pdf', 'wb') as f:
     f.write(bytes_pdf)
 
 consumer.close()
@@ -104,7 +105,7 @@ def extract_policydata_text(file_path):
     return pdf_text
 
 print('[SYSTEM] Embedding policy data')
-pdf_text = extract_policydata_text('./data/flight_policy_data.pdf')
+pdf_text = extract_policydata_text('../../flight_policy_data.pdf')
 embed = embeddings.embed_documents(pdf_text)
 new_values = [{"content": pdf_text[i], "embedding": embed[i]} 
             for i in range(len(pdf_text))]

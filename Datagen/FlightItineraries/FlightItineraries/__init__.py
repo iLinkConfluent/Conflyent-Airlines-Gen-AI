@@ -66,7 +66,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
             avro_writer.write(i, encoder)
             raw_bytes = bytes_writer.getvalue()
             #logging.warning(json.dumps(i))
-            producer.produce("FlightItineriesData", value=avro_serializer(i, SerializationContext("FlightItineriesData", MessageField.VALUE)))
+            producer.produce("FlightItinerariesData", value=avro_serializer(i, SerializationContext("FlightItinerariesData", MessageField.VALUE)))
             time.sleep(1)
             producer.poll(2)
             producer.flush()

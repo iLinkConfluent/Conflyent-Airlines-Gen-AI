@@ -113,7 +113,7 @@ resource "azurerm_application_insights" "test2" {
 }
 
 resource "azurerm_function_app" "app2" {
-  name                       = "${var.azure_functionapp_FlightItineries}"
+  name                       = "${var.azure_functionapp_FlightItineraries}"
   location                   = azurerm_resource_group.az_resource_group.location
   resource_group_name        = azurerm_resource_group.az_resource_group.name
   app_service_plan_id        = azurerm_service_plan.serviceplan2.id
@@ -263,11 +263,11 @@ resource "confluent_kafka_topic" "FlightPolicyData" {
     secret = confluent_api_key.app-manager-kafka-api-key.secret
   }
 }
-resource "confluent_kafka_topic" "FlightItineriesData" {
+resource "confluent_kafka_topic" "FlightItinerariesData" {
   kafka_cluster {
     id = confluent_kafka_cluster.standard.id
   }
-  topic_name    = "FlightItineriesData"
+  topic_name    = "FlightItinerariesData"
   partitions_count = 1
   rest_endpoint = confluent_kafka_cluster.standard.rest_endpoint
   credentials {
@@ -433,10 +433,10 @@ resource "confluent_connector" "Azureadlssink" {
 ####################flink#############################
 
 resource "confluent_flink_compute_pool" "main" {
-  display_name     = var.flink_display_name
+  display_name = var.flink_display_name
   cloud        = "AZURE"
   region       = "eastus"
-  max_cfu          = 5
+  max_cfu      = 5
   environment {
     id = confluent_environment.staging.id
     }
@@ -494,6 +494,6 @@ output "CONFLUENT_SCHEMA_REGISTRYURL" {
 }
 
 output "CONFLUENT_SCHEMA_REGISTRY_AUTH_USER" {
-  value = "***"
+  value = "{API key}:{API secret}"
 }
 ###################################################################################

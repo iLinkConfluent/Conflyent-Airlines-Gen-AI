@@ -52,7 +52,7 @@ resource "null_resource" "dockerbuild-backend" {
 
 resource "null_resource" "dockerpush-backend" {
   provisioner "local-exec" {
-    command = "docker push ${var.acrname}.azurecr.io/${var.dockertag-frontend}"
+    command = "docker push ${var.acrname}.azurecr.io/${var.dockertag-backend}"
   }
   depends_on = [
     null_resource.dockerbuild-backend,

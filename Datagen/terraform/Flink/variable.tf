@@ -1,14 +1,14 @@
 #CONFLUENT
 variable "confluent_cloud_api_key" {
-  default = "XXX"
+  default = "confluent cloud api key"
 }
 
 variable "confluent_cloud_api_secret" {
- default = "XXX"
+ default = "confluent cloud api secret"
 }
 
 variable "confluent_organisation_id" {
-  default = "XXX"
+  default = "confluent organisation id"
 }
 
 variable "environment_id" {
@@ -20,7 +20,7 @@ variable "flink_compute_pool_id"{
 }
 
 variable "flink_rest_endpoint"{
-  default = "https://flink.{cloud region}.{cloud provider}.confluent.cloud"
+  default = "https://flink.eastus.azure.confluent.cloud"
 }
 
 variable "flink_api_key" {
